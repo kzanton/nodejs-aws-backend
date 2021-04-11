@@ -9,11 +9,15 @@
 
 ### Additional tasks
 
-+1 - Webpack is configured for product-service
++1 - Async/await is used in lambda functions
 
 +1 - ES6 modules are used for product-service implementation
 
++1 - Webpack is configured for product-service
+
 +1 - Lambda handlers (getProductsList, getProductsById) code is written not in 1 single module (file) and separated in codebase.
+
++1 - Main error scenarious are handled by API ("Product not found" error, try catch blocks are used in lambda handlers).
 
 ---
  More functionality will be added this weekend.
