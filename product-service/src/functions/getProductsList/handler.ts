@@ -5,6 +5,8 @@ import { middyfy } from '@libs/lambda';
 import productService from '@services/product';
 
 export const getProductsList = async () => {
+  console.log('Handler started');
+
   try {
     const products = await productService.getProductList();
 

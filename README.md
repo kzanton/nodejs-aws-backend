@@ -10,7 +10,12 @@
 
 ### getProductsById
 
-[/products/1](https://xnj469am26.execute-api.eu-west-1.amazonaws.com/dev/products/1)
+[GET /products/a977c457-e0f8-4e8c-887a-ad74c362cd9d](https://xnj469am26.execute-api.eu-west-1.amazonaws.com/dev/products/a977c457-e0f8-4e8c-887a-ad74c362cd9d)
 
-[/products/999](https://xnj469am26.execute-api.eu-west-1.amazonaws.com/dev/products/999)
+[GET /products/999](https://xnj469am26.execute-api.eu-west-1.amazonaws.com/dev/products/a977c457-e0f8-4e8c-887a-ad74c362cd93)
 (no product)
+
+### createProduct
+
+[POST /products](https://xnj469am26.execute-api.eu-west-1.amazonaws.com/dev/products/)
+{"title": "test"}
