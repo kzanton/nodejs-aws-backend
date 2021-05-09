@@ -19,3 +19,13 @@
 
 [POST /products](https://xnj469am26.execute-api.eu-west-1.amazonaws.com/dev/products/)
 {"title": "test"}
+
+# Import service
+
+### importProductsFile
+
+[GET /import/?name=filename](https://ng8k6rhfp1.execute-api.eu-west-1.amazonaws.com/dev/import/?name=testname)
+
+### importFileParser
+
+Triggered by upload a products catalog file to the bucket
