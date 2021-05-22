@@ -6,6 +6,7 @@ import importFileParser from '@functions/importFileParser';
 const serverlessConfiguration: AWS = {
   service: 'import-service',
   frameworkVersion: '2',
+  useDotenv: true,
   custom: {
     webpack: {
       webpackConfig: './webpack.config.js',
@@ -29,7 +30,12 @@ const serverlessConfiguration: AWS = {
         Effect: 'Allow',
         Action: 's3:*',
         Resource: ['arn:aws:s3:::starship-market-uploads/*']
-      }
+      },
+      {
+        Effect: 'Allow',
+        Action: 'sqs:*',
+        Resource: ['${env:CATALOG_ITEMS_QUEUE_ARN}']
+      },
     ],
     apiGateway: {
       minimumCompressionSize: 1024,
@@ -37,7 +43,8 @@ const serverlessConfiguration: AWS = {
     },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
-      UPLOADS_BUCKET_NAME: '${self:custom.uploadsBucketName}'
+      UPLOADS_BUCKET_NAME: '${self:custom.uploadsBucketName}',
+      CATALOG_ITEMS_QUEUE_URL: '${env:CATALOG_ITEMS_QUEUE_URL}'
     },
     lambdaHashingVersion: '20201221',
   },
