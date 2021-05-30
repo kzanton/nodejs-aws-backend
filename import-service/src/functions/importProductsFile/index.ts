@@ -14,6 +14,14 @@ export default {
               name: true
             }
           }
+        },
+        authorizer: {
+          name: 'basicAuthorizer',
+          arn: '${env:BASIC_AUTHORIZER_ARN}',
+          resultTtlInSeconds: 0,
+          identitySource: 'method.request.header.Authorization',
+          managedExternally: false,
+          type: 'token',
         }
       }
     }
